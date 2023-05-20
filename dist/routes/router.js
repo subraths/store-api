@@ -1,6 +1,8 @@
-import { Router } from "express";
-import { getAllProducts, getAllProductsStatic } from "../controller/controller";
-const router = Router();
-router.route("/").get(getAllProducts);
-router.route("/static").get(getAllProductsStatic);
-export default router;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var controller_1 = require("../controller/controller");
+var router = (0, express_1.Router)();
+router.route("/").get(controller_1.getAllProducts);
+router.route("/static").get(controller_1.getAllProductsStatic);
+exports.default = router;

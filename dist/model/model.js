@@ -1,5 +1,10 @@
-import mongoose from "mongoose";
-const productSchema = new mongoose.Schema({
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var mongoose_1 = __importDefault(require("mongoose"));
+var productSchema = new mongoose_1.default.Schema({
     name: {
         type: String,
         required: [true, "must provide product name"],
@@ -18,7 +23,7 @@ const productSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: () => Date.now(),
+        default: function () { return Date.now(); },
     },
     company: {
         type: String,
@@ -29,4 +34,4 @@ const productSchema = new mongoose.Schema({
         },
     },
 });
-export default mongoose.model("product", productSchema);
+exports.default = mongoose_1.default.model("product", productSchema);
